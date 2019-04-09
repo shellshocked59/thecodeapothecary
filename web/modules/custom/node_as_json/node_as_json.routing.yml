@@ -1,0 +1,7 @@
+node_as_json.json:
+  path: '/node/{nid}/json'
+  defaults:
+    _controller: '\Drupal\node_as_json\Controller\NodeAsJsonController::publishedShow'
+  requirements:
+    _permission: 'access content'
+    node: \d+

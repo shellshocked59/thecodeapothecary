@@ -1,0 +1,17 @@
+{
+  "name": "drupal/node_as_json",
+  "description": "Allows for nodes to be rendered as JSON for other services to use.",
+  "type": "drupal-module",
+  "autoload": {
+    "psr-4": {
+      "Drupal\\node_as_json\\": "src/"
+    }
+  },
+  "extra": {
+    "drush": {
+      "services": {
+        "drush.services.yml": "^9"
+      }
+    }
+  }
+}

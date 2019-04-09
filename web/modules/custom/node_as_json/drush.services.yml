@@ -1,0 +1,5 @@
+services:
+  node_as_json.commands:
+    class: \Drupal\node_as_json\Commands\NodeAsJsonCommands
+    tags:
+      - { name: drush.command }

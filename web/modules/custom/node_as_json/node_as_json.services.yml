@@ -1,0 +1,11 @@
+services:
+  node_as_json.no_big_pipe:
+    class: Drupal\node_as_json\Controller\NodeAsJsonController
+  node_as_json.cron:
+    class: Drupal\node_as_json\NodeAsJsonCron
+  node_as_json.commands:
+    class: Drupal\node_as_json\Commands\NodeAsJsonCommands
+  node_as_json.file_manager:
+    class: Drupal\node_as_json\NodeAsJsonFileManager
+  node_as_json.main:
+    class: Drupal\node_as_json\NodeAsJsonMain

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Adds BigPipe no-JS detection.
+ */
+
+use Drupal\node_as_json\NodeAsJsonCron;
+
+function node_as_json_cron(){
+  //$json_cron = new \Drupal\node_as_json\NodeAsJsonCron();
+  //$json_cron->cronjob();
+  $cron = \Drupal::service('node_as_json.cron');
+  $cron->cronjob();
+}
