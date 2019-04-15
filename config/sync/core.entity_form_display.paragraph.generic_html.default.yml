@@ -1,0 +1,34 @@
+uuid: 9f1f1ae6-074f-42da-b6a2-bc9fd44d8886
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.generic_html.field_generic_html
+    - field.field.paragraph.generic_html.field_title
+    - paragraphs.paragraphs_type.generic_html
+  module:
+    - text
+id: paragraph.generic_html.default
+targetEntityType: paragraph
+bundle: generic_html
+mode: default
+content:
+  field_generic_html:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

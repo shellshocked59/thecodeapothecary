@@ -6,10 +6,36 @@
  */
 
 use Drupal\node_as_json\NodeAsJsonCron;
+use Drupal\Core\Entity\EntityInterface;
 
 function node_as_json_cron(){
   //$json_cron = new \Drupal\node_as_json\NodeAsJsonCron();
   //$json_cron->cronjob();
   $cron = \Drupal::service('node_as_json.cron');
   $cron->cronjob();
+}
+
+
+/**
+ * Implements hook_ENTITY_TYPE_postsave().
+ */
+function node_as_json_node_postsave(EntityInterface $entity, $op) {
+  $id = $entity->id();
+  $bundle = $entity->bundle();
+
+  \Drupal::logger('mee')
+    ->info($bundle);
+
+  if(in_array($bundle, get_node_type_whitelist())){
+  	$filemanager = \Drupal::service('node_as_json.file_manager');
+  	$filemanager->createFilesForNID($id);
+  }
+}
+
+
+//TODO This should be based off a config form
+function get_node_type_whitelist(){
+	return [
+      'page',
+    ];
 }

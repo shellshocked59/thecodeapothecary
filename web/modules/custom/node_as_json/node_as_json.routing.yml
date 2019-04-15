@@ -5,3 +5,10 @@ node_as_json.json:
   requirements:
     _permission: 'access content'
     node: \d+
+node_as_json.published_listing:
+  path: '/nodes_as_json/published'
+  defaults:
+    _controller: '\Drupal\node_as_json\Controller\NodeAsJsonController::publishedList'
+  requirements:
+    _permission: 'access content'
+    node: \d+

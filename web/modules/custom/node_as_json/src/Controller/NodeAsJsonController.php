@@ -30,5 +30,19 @@ class NodeAsJsonController {
     }
   }
 
+  public function publishedList(){
+    $folder = 'public://nodes_as_json/published';
+    $files = array_diff(scandir($folder), array('.', '..'));
+    
+    $data = [];
+    foreach($files as $file){
+      $json = json_decode(file_get_contents($folder .'/'. $file), true);
+      if(!empty($json['path'][0]['alias'])){
+        $data[$json['path'][0]['alias']] = '/sites/default/files/nodes_as_json/published/'.$file;
+      }      
+    }
+
+    return new JsonResponse($data);
+  }
   
 }

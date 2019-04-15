@@ -1,0 +1,21 @@
+uuid: c142452a-a543-44b6-ba29-02aa6be0e794
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_generic_html
+    - paragraphs.paragraphs_type.generic_html
+  module:
+    - text
+id: paragraph.generic_html.field_generic_html
+field_name: field_generic_html
+entity_type: paragraph
+bundle: generic_html
+label: 'Generic HTML'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -4,3 +4,5 @@ description: 'Allows for nodes to be rendered as JSON for other services to use.
 package: nodeasjson
 version: 0.x
 core: 8.x
+dependencies:
+  - hook_post_action

@@ -1,0 +1,9 @@
+uuid: 565d9572-d885-4b6c-bcce-9062c8d80686
+langcode: en
+status: true
+dependencies: {  }
+id: generic_html
+label: 'Generic HTML'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

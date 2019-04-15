@@ -5,13 +5,8 @@ namespace Drupal\node_as_json;
 
 class NodeAsJsonCron {
   public function cronjob(){
-    //get all nodes that need to be updated
-    $node_type_whitelist = [
-      'page',
-    ];
-
     $nids = \Drupal::entityQuery('node')
-      ->condition('type', $node_type_whitelist, 'IN')
+      ->condition('type', get_node_type_whitelist(), 'IN')
       ->execute();
 
     //for each node, write a JSON file

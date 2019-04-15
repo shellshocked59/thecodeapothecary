@@ -1,0 +1,31 @@
+uuid: 8dfae158-fd15-451a-baed-dc504f544b3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.generic_html.field_generic_html
+    - field.field.paragraph.generic_html.field_title
+    - paragraphs.paragraphs_type.generic_html
+  module:
+    - text
+id: paragraph.generic_html.default
+targetEntityType: paragraph
+bundle: generic_html
+mode: default
+content:
+  field_generic_html:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }
