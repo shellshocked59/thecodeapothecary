@@ -30,6 +30,9 @@ exports.get_json_listing = function(){
 	return json_listing;
 }
 exports.get_json_key = function(key){
+	return json_listing[key];
+}
+exports.get_json_node = function(key){
 	return json_nodes[key];
 }
 exports.get_ready = function(){
@@ -70,8 +73,8 @@ exports.get_json_listing = function(){
 exports.set_json_files = function(){
 	var options = drupal_options;
 
-	for (let key in json_listing){
-		options.uri = drupal_base_url + json_listing[key];
+	for (let key in json_listing.published_nodes){
+		options.uri = drupal_base_url + json_listing.published_nodes[key];
 
 		request(options, function(error, response, body){
 		    if(error){

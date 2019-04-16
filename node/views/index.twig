@@ -1,6 +1,9 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-  <h1>{{title}}</h1>
-  <p>Welcome to {{title}}</p>
+   {% for paragraph_item in json_data.field_paragraphs %}
+   	{% set paragraph_type = paragraph_item.type[0]['target_id'] %}
+
+   	{% include 'includes/paragraphs/' ~ paragraph_type ~ '.twig' with paragraph_item %}
+   {% endfor %}
 {% endblock %}

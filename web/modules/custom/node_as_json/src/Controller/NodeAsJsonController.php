@@ -35,14 +35,44 @@ class NodeAsJsonController {
     $files = array_diff(scandir($folder), array('.', '..'));
     
     $data = [];
+    //data.published_nodes
     foreach($files as $file){
       $json = json_decode(file_get_contents($folder .'/'. $file), true);
       if(!empty($json['path'][0]['alias'])){
-        $data[$json['path'][0]['alias']] = '/sites/default/files/nodes_as_json/published/'.$file;
+        $data['published_nodes'][$json['path'][0]['alias']] = '/sites/default/files/nodes_as_json/published/'.$file;
       }      
     }
 
+    //data.header
+    $menu_name = 'main';
+    $tree = $this->render_menu_navigation($menu_name);
+    $data['header'] = $tree;
+
+    //data.footer
+    $menu_name = 'footer';
+    $tree = $this->render_menu_navigation($menu_name);
+    $data['footer'] = $tree;
+
+
     return new JsonResponse($data);
+  }
+
+  private function render_menu_navigation($menu_name){
+    $tree = \Drupal::menuTree()->load($menu_name, new \Drupal\Core\Menu\MenuTreeParameters());
+    $data = [];
+    foreach ($tree as $item) {
+      $title = $item->link->getTitle();
+      $url_obj = $item->link->getUrlObject();
+      $url = $url_obj->toString();
+      $has_children = $item->hasChildren;
+
+      $data[] = [
+        'title' => $title,
+        'url' => $url,
+      ];
+    }
+
+    return $data;
   }
   
 }

@@ -1,0 +1,11 @@
+<!-- footer.twig -->
+{# {{ dump(header_footer.footer) }} #}
+
+<div class="footer">
+
+	<ul class="footer-items">
+	{% for menu_item in header_footer.footer %}
+		<a href="{{ menu_item.url }}"><li>{{ menu_item.title }}</li></a>
+	{% endfor %}
+	</ul>
+</div>
