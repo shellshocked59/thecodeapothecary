@@ -1,5 +1,8 @@
 {# {{ dump(paragraph_item) }} #}
 <div class="generic-html">
+	<div class="title">
+		{{ paragraph_item.field_title[0]['value'] }}
+	</div>
 	<div class="wysiwyg">
 		{{ paragraph_item.field_generic_html[0]['value'] }}
 	</div>

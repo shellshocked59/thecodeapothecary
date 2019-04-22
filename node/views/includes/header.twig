@@ -1,9 +1,26 @@
 <!-- header.twig -->
 {# {{ dump(header_footer.header) }} #}
 
-<div class="header">
+<div class="header uk-grid">
 
-	<ul class="header-items">
+	<div class="uk-width-2-3 site-name">
+
+		<div class="name">
+			The Code Apothecary
+			<div class="logo">
+				<i class="fas fa-laptop-code"></i>
+			</div>
+		</div>
+		<div class="subtext">Website Development by Eric Washburn</div>
+	</div>
+
+	<a id="header-hamburger" class="uk-width-1-3 open-mobile-menu" href="javascript:void(0)">
+		<span class="line"></span>
+		<span class="line"></span>
+		<span class="line"></span>
+	</a>
+
+	<ul id="mobile-menu" class="uk-width-1-1 uk-hidden header-items">
 	{% for menu_item in header_footer.header %}
 		<a href="{{ menu_item.url }}"><li>{{ menu_item.title }}</li></a>
 	{% endfor %}
