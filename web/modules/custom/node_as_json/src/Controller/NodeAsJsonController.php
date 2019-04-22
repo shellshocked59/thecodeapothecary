@@ -61,15 +61,17 @@ class NodeAsJsonController {
     $tree = \Drupal::menuTree()->load($menu_name, new \Drupal\Core\Menu\MenuTreeParameters());
     $data = [];
     foreach ($tree as $item) {
-      $title = $item->link->getTitle();
-      $url_obj = $item->link->getUrlObject();
-      $url = $url_obj->toString();
-      $has_children = $item->hasChildren;
+      if($item->link->isEnabled()){
+        $title = $item->link->getTitle();
+        $url_obj = $item->link->getUrlObject();
+        $url = $url_obj->toString();
+        $has_children = $item->hasChildren;
 
-      $data[] = [
-        'title' => $title,
-        'url' => $url,
-      ];
+        $data[] = [
+          'title' => $title,
+          'url' => $url,
+        ];
+      }
     }
 
     return $data;
