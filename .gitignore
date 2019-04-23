@@ -22,3 +22,7 @@
 
 # Ignore .env files as they are personal
 /.env
+
+
+/node/public/stylesheets/style.css
+/node/public/stylesheets/style.css.map
