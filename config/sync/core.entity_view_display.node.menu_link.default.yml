@@ -1,0 +1,44 @@
+uuid: fa8a257a-2b72-4b33-a356-444fffd9faaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.menu_link.field_link
+    - field.field.node.menu_link.field_new_tab
+    - node.type.menu_link
+  module:
+    - link
+    - user
+id: node.menu_link.default
+targetEntityType: node
+bundle: menu_link
+mode: default
+content:
+  field_link:
+    weight: 101
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_new_tab:
+    weight: 102
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

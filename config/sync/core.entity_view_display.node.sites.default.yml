@@ -1,0 +1,64 @@
+uuid: 63a6f11d-c803-478f-a0a4-c69bac505a91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sites.field_copyright
+    - field.field.node.sites.field_footer_links
+    - field.field.node.sites.field_header_links
+    - field.field.node.sites.field_site_key
+    - field.field.node.sites.field_tagline
+    - node.type.sites
+  module:
+    - user
+id: node.sites.default
+targetEntityType: node
+bundle: sites
+mode: default
+content:
+  field_copyright:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_footer_links:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_header_links:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_site_key:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_tagline:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

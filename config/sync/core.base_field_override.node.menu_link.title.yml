@@ -1,0 +1,18 @@
+uuid: 85a17396-5cc4-4c01-8dbb-156edebd21ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.menu_link
+id: node.menu_link.title
+field_name: title
+entity_type: node
+bundle: menu_link
+label: 'CMS Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

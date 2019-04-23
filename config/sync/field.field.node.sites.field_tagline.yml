@@ -1,0 +1,19 @@
+uuid: e8fcb149-61de-47f3-87cc-71878de8fb79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tagline
+    - node.type.sites
+id: node.sites.field_tagline
+field_name: field_tagline
+entity_type: node
+bundle: sites
+label: Tagline
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

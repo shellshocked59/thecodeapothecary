@@ -1,0 +1,17 @@
+uuid: 5299a9a8-3ee4-4643-9962-adb492fe0cf4
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Menu Link'
+type: menu_link
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,29 @@
+uuid: 4e1ddf28-609c-4098-8f50-ba1e1ba51e03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_links
+    - node.type.menu_link
+    - node.type.sites
+id: node.sites.field_header_links
+field_name: field_header_links
+entity_type: node
+bundle: sites
+label: 'Header Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      menu_link: menu_link
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

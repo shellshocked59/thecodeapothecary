@@ -1,0 +1,19 @@
+uuid: 9561bdce-0c19-4cc0-844c-9a1c480178bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_key
+    - node.type.sites
+id: node.sites.field_site_key
+field_name: field_site_key
+entity_type: node
+bundle: sites
+label: 'Site Key'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

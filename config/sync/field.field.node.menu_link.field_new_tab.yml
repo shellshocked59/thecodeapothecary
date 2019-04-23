@@ -1,0 +1,23 @@
+uuid: 56bc744b-adaf-4bc9-b7a4-bb37adbbbedc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_new_tab
+    - node.type.menu_link
+id: node.menu_link.field_new_tab
+field_name: field_new_tab
+entity_type: node
+bundle: menu_link
+label: 'Open link in new tab?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
