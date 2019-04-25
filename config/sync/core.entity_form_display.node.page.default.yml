@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.page.field_page_type
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_site
+    - field.field.node.page.field_url_alias
     - node.type.page
   module:
     - paragraphs
@@ -46,6 +47,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_url_alias:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   path:
     type: path

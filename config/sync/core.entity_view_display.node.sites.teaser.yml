@@ -17,4 +17,9 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_copyright: true
+  field_footer_links: true
+  field_header_links: true
+  field_site_key: true
+  field_tagline: true
