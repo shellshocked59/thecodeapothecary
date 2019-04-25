@@ -10,19 +10,56 @@ class NodeAsJsonMain {
    */
   public function getSimpleNodeObject($node){
     $json = $node->toArray();
-
-    //TODO should really do this another way
-    if(!empty($json['field_paragraphs'])){
-      $data = [];
-      foreach($json['field_paragraphs'] as $key=>$value){
-        $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($value['target_id'], $value['target_revision_id']);
-        $data[$key] = $paragraph->toArray();
-      }
-      
-      $json['field_paragraphs'] = $data;
-    }
+    $json = $this->filterNodeToArray($json);
 
     return $json;
+  }
+
+  private function filterNodeToArray($json){
+    foreach($json as $key=>$values){
+      //blacklist some types ew dont care about
+      if(!in_array($key, ['type', 'revision_uid', 'uid'])){
+        //field is a reference field
+        if(!empty($values[0]['target_id'])){
+          if($key == 'field_paragraphs'){
+            $data = $this->getReferencedFieldData($values, 'paragraph');
+          }else{
+            $data = $this->getReferencedFieldData($values, 'node');
+          }
+          $json[$key] = $data;
+        }
+
+        //remove internal/ from links
+        if(!empty($values[0]['uri'])){
+          foreach($values as $key2=>$value){
+            $json[$key][$key2]['uri'] = str_replace('internal:', '', $value['uri']);
+          }
+        }
+      }
+    } 
+
+    return $json;
+  }
+
+  private function getReferencedFieldData($values, $type){
+    $data = [];
+    if(!empty($values)){
+      
+      foreach($values as $key=>$value){
+        if($type == 'paragraph'){
+          $reference = \Drupal\paragraphs\Entity\Paragraph::load($value['target_id'], $value['target_revision_id']);
+        }else{
+          $reference = node_load($value['target_id'], $value['target_revision_id']);
+        }
+
+        if(!empty($reference)){
+          $data[$key] = $this->filterNodeToArray($reference->toArray());
+        }
+      }
+      
+    }
+
+    return $data;
   }
 
   function getPublishedNode($nid){

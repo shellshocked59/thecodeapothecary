@@ -57,6 +57,51 @@ class NodeAsJsonController {
     return new JsonResponse($data);
   }
 
+  public function sitePublishedList($site_name){
+    $main = \Drupal::service('node_as_json.main');
+    $data = [];
+    /*$folder = 'public://nodes_as_json/published';
+    $files = array_diff(scandir($folder), array('.', '..'));
+    
+    //data.published_nodes
+    foreach($files as $file){
+      $json = json_decode(file_get_contents($folder .'/'. $file), true);
+      if(!empty($json['path'][0]['alias'])){
+        $data['published_nodes'][$json['path'][0]['alias']] = '/sites/default/files/nodes_as_json/published/'.$file;
+      }      
+    }*/
+    $result = \Drupal::entityQuery('node')
+    ->condition('type', 'sites')
+    ->condition('field_site_key', $site_name)
+    ->range(0, 1)
+    ->execute();
+    $nid = array_shift(array_values($result));
+
+    if(!empty($nid)){
+      $site_node = node_load($nid);
+      $data = $main->getSimpleNodeObject($site_node);
+      $data['published_nodes'] = [];
+      $nids = \Drupal::entityQuery('node')
+        ->condition('type', ['page'], 'IN')
+        ->condition('field_site', $nid)
+        ->execute();
+      foreach($nids as $nid){
+        $node_json = $main->getSimpleNodeObject(node_load($nid));
+        $node_url = $node_json['path'][0]['alias'];
+        if(!empty($node_url)){
+          $data['published_nodes'][$node_url] = $node_json;
+        }
+      }
+
+    }else{
+      $data['error'] = 'Site does not exist';
+    }
+
+
+    return new JsonResponse($data);
+  }
+
+
   private function render_menu_navigation($menu_name){
     $tree = \Drupal::menuTree()->load($menu_name, new \Drupal\Core\Menu\MenuTreeParameters());
     $data = [];
