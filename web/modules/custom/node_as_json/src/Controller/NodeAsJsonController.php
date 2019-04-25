@@ -87,7 +87,7 @@ class NodeAsJsonController {
         ->execute();
       foreach($nids as $nid){
         $node_json = $main->getSimpleNodeObject(node_load($nid));
-        $node_url = $node_json['path'][0]['alias'];
+        $node_url = $node_json['field_url_alias'][0]['value'];
         if(!empty($node_url)){
           $data['published_nodes'][$node_url] = $node_json;
         }

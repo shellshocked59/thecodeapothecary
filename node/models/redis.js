@@ -20,6 +20,7 @@ var json_nodes = {};
 var is_json_ready = 0;
 
 //drupal configuration
+var site_key = 'quyen';
 var drupal_base_url = 'http://www.thecodeapothecary.com:8080/';
 var drupal_options = {
     port: '80',
@@ -57,7 +58,7 @@ exports.initialize = function(){
 
 exports.get_json_listing = function(){
 	var options = drupal_options;
-	options.uri = drupal_base_url + 'nodes_as_json/published';
+	options.uri = drupal_base_url + 'nodes_as_json/'+site_key+'/published';
 	let set_json_files = this.set_json_files;
 
 	request(options, function(error, response, body){
@@ -65,27 +66,18 @@ exports.get_json_listing = function(){
 	    	console.log(error);
 		}else{
 			json_listing = JSON.parse(body);
-			set_json_files();
+			set_json_files(json_listing);
 	    }
 	});
 }
 
-exports.set_json_files = function(){
+exports.set_json_files = function(json_listing){
 	var options = drupal_options;
 
 	for (let key in json_listing.published_nodes){
-		options.uri = drupal_base_url + json_listing.published_nodes[key];
-
-		request(options, function(error, response, body){
-		    if(error){
-		    	console.log(error);
-			}else{
-				json_nodes[key] = JSON.parse(body);
-		    }
-		});
-
-		//TODO this might not be fully asynch
-		//could rewrite as a test of listing vs loaded files instead
-		is_json_ready = 1;
+		json_nodes[key] = json_listing.published_nodes[key];
 	}	
+	//TODO this might not be fully asynch
+	//could rewrite as a test of listing vs loaded files instead
+	is_json_ready = 1;
 }
