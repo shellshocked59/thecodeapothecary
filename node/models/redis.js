@@ -20,7 +20,7 @@ var json_nodes = {};
 var is_json_ready = 0;
 
 //drupal configuration
-var site_key = 'quyen';
+var site_key = (process.env.SITE_KEY || 'tca');
 var drupal_base_url = 'http://www.thecodeapothecary.com:8080/';
 var drupal_options = {
     port: '80',

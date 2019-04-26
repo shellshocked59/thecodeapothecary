@@ -26,8 +26,14 @@ exports.default_route = function(req, res) {
 
 
 exports.get_header_footer_data = function(req, res) {
-	let header = redis_model.get_json_key('header');
-	let footer = redis_model.get_json_key('footer');
+	let header = redis_model.get_json_key('field_header_links');
+	let footer = redis_model.get_json_key('field_footer_links');
 
-	return {'header': header, 'footer': footer};
+	return {
+		'header': header, 
+		'footer': footer,
+		'site_title': redis_model.get_json_key('title')[0]['value'],
+		'site_subtitle':redis_model.get_json_key('field_tagline')[0]['value'],
+		'site_copyright':redis_model.get_json_key('field_copyright')[0]['value'],
+	};
 }

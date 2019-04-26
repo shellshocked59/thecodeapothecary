@@ -6,12 +6,12 @@
 	<div class="uk-width-2-3 site-name">
 
 		<div class="name">
-			The Code Apothecary
+			{{ header_footer.site_title }}
 			<div class="logo">
 				<i class="fas fa-laptop-code"></i>
 			</div>
 		</div>
-		<div class="subtext">Website Development by Eric Washburn</div>
+		<div class="subtext">{{ header_footer.site_title }}</div>
 	</div>
 
 	<a id="header-hamburger" class="uk-width-1-3 open-mobile-menu" href="javascript:void(0)">
@@ -22,7 +22,7 @@
 
 	<ul id="mobile-menu" class="uk-width-1-1 uk-hidden header-items">
 	{% for menu_item in header_footer.header %}
-		<a href="{{ menu_item.url }}"><li>{{ menu_item.title }}</li></a>
+		<a href="{{ menu_item.field_link[0].uri }}"><li>{{ menu_item.field_link[0].title }}</li></a>
 	{% endfor %}
 	</ul>
 </div>

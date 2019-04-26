@@ -5,8 +5,8 @@
 
 	<ul class="footer-items">
 	{% for menu_item in header_footer.footer %}
-		<a href="{{ menu_item.url }}"><li>{{ menu_item.title }}</li></a>
+		<a href="{{ menu_item.field_link[0].uri }}"><li>{{ menu_item.field_link[0].title }}</li></a>
 	{% endfor %}
 	</ul>
-	<div class="copyright">&#169; The Code Apothecary Corporation</div>
+	<div class="copyright">&#169; {{ header_footer.site_copyright }}</div>
 </div>
