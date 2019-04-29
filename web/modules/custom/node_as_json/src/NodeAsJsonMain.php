@@ -2,6 +2,8 @@
 
 namespace Drupal\node_as_json;
 
+use Drupal\Core\Url;
+
 
 
 class NodeAsJsonMain {
@@ -46,6 +48,7 @@ class NodeAsJsonMain {
 
   private function getReferencedFieldData($values, $type){
     $data = [];
+    $is_drupal_object = true;
     if(!empty($values)){
       
       foreach($values as $key=>$value){
@@ -55,16 +58,20 @@ class NodeAsJsonMain {
           $file = \Drupal\file\Entity\File::load($value['target_id']);
           //$values['uri'] = $file->getUri();
           $file_uri = $file->getFileUri();
-          $url = Url::fromUri($file_uri, ['absolute' => TRUE]);
-          $values['url'] = $url;
-          $values['uri'] = $file_uri;
-          $reference = $values;
+          $url = file_create_url($file_uri);
+          $values[$key]['url'] = $url;
+          $values[$key]['uri'] = $file_uri;
+          $reference = (object) $values;
+          $is_drupal_object = false;
         }else{
           $reference = node_load($value['target_id'], $value['target_revision_id']);
         }
 
         if(!empty($reference)){
-          $data[$key] = $this->filterNodeToArray($reference->toArray());
+          if($is_drupal_object){
+            $reference = $this->filterNodeToArray($reference->toArray());
+          }
+          $data[$key] = $reference;
         }
       }
       
