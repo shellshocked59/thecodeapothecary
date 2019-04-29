@@ -3,6 +3,8 @@
 {% block body %}
    {% for paragraph_item in json_data.field_paragraphs %}
    	{% set paragraph_type = paragraph_item.type[0]['target_id'] %}
-   	{% include 'includes/paragraphs/' ~ paragraph_type ~ '.twig' with paragraph_item %}
+   	<section class="{{ paragraph_type }}">
+		{% include 'includes/paragraphs/' ~ paragraph_type ~ '.twig' with paragraph_item %}
+	</section>
    {% endfor %}
 {% endblock %}

@@ -9,6 +9,8 @@ $footer_height:50px;
 $header_footer_padding: 10px 10px;
 $max_width:1400px;
 
+$preferred_text_width: 614px;
+
 
 
 
@@ -31,11 +33,18 @@ body::after {
   height: 50px; /* Set same as footer's height */
 }
 #page-container{
-	padding: 90px 10px 20px 10px;
+	padding: 90px 0 20px 0;
+}
+section{
+	padding-right:10px;
+	padding-left:10px;
 }
 
 a{
   color: #00B7FF;
+}
+em{
+	color:inherit;
 }
 
 .uk-button{
@@ -57,6 +66,14 @@ a{
    		border-color: #117EAD;
    		color:white;
     }
+}
+
+.border{
+	display: block;
+    width: 80px;
+    height: 2px;
+    background: #060606;
+    margin: 0 auto;
 }
 
 /* header */
@@ -166,8 +183,39 @@ a{
 	}
 	.wysiwyg{
 		text-align:left;
+		max-width:$preferred_text_width;
+		margin:0 auto;
 		ul{
 			
+		}
+	}
+}
+
+.carousel_with_title{
+	padding:0;
+	.background-wrapper{
+		padding:50px 10px;
+	}
+	color:white;
+	text-align:center;
+	.carousel-title{
+		font-size:300%;
+		letter-spacing: .15em;
+		height:40px;
+	}
+	.border{
+		background-color:white;
+		margin-bottom:50px;
+	}
+	.uk-slideshow{
+		position:relative;
+		.uk-slideshow-items{
+			.slide{
+				.wysiwyg{
+					max-width:$preferred_text_width;
+					margin:0 auto;
+				}
+			}
 		}
 	}
 }

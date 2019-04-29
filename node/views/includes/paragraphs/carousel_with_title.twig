@@ -1,4 +1,21 @@
- {{ dump(paragraph_item) }} 
-<div class="carousel-with-title">
-	
+{{ dump(paragraph_item) }} 
+<div style="background-image:url('{{ paragraph_item.url }}')" class="background-wrapper">
+	<div class="carousel-title">{{ paragraph_item.field_title[0]['value']}}</div>
+	<div class="border"></div>
+
+	<div class="carousel" uk-slideshow="autoplay: true; pause-on-hover: true; min-height: 100; max-height: 130;animation: slide">
+		<ul class="uk-slideshow-items">
+			{% for html_slide in paragraph_item.field_html_slide %}
+				<li class="slide">
+					<div class="wysiwyg">{{  html_slide.value }}</div>
+				</li>
+			{% endfor %}
+		</ul>
+
+
+		<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+   		<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+	</div>
+
+
 </div>

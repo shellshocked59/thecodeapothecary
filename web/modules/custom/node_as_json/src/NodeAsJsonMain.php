@@ -17,12 +17,15 @@ class NodeAsJsonMain {
 
   private function filterNodeToArray($json){
     foreach($json as $key=>$values){
-      //blacklist some types ew dont care about
+      //blacklist some types we dont care about
       if(!in_array($key, ['type', 'revision_uid', 'uid'])){
         //field is a reference field
         if(!empty($values[0]['target_id'])){
           if($key == 'field_paragraphs'){
             $data = $this->getReferencedFieldData($values, 'paragraph');
+          }elseif(isset($values[0]['alt'])){
+            //is image
+            $data = $this->getReferencedFieldData($values, 'image');
           }else{
             $data = $this->getReferencedFieldData($values, 'node');
           }
@@ -48,6 +51,14 @@ class NodeAsJsonMain {
       foreach($values as $key=>$value){
         if($type == 'paragraph'){
           $reference = \Drupal\paragraphs\Entity\Paragraph::load($value['target_id'], $value['target_revision_id']);
+        }elseif($type == 'image'){
+          $file = \Drupal\file\Entity\File::load($value['target_id']);
+          //$values['uri'] = $file->getUri();
+          $file_uri = $file->getFileUri();
+          $url = Url::fromUri($file_uri, ['absolute' => TRUE]);
+          $values['url'] = $url;
+          $values['uri'] = $file_uri;
+          $reference = $values;
         }else{
           $reference = node_load($value['target_id'], $value['target_revision_id']);
         }

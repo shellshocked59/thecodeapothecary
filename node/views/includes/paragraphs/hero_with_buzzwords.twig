@@ -1,4 +1,13 @@
-{{ dump(paragraph_item) }}
+{# {{ dump(paragraph_item) }}  #}
 <div class="hero-with-buzzwords">
-	
+	<div class="buzzwords">
+		{% for buzzword in paragraph_item.field_buzzwords %}
+			<div class="buzzword">{{ buzzword.value }}</div>
+		{% endfor %}
+	</div>
+	<div class="ctas">
+		{% for cta in paragraph_item.field_links %}
+			<a class="cta" href="{{ cta.field_link[0].uri }}">{{ cta.field_link[0].title }}</a>
+		{% endfor %}
+	</div>
 </div>
