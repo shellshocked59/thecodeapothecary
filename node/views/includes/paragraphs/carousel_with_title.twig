@@ -1,5 +1,5 @@
-{{ dump(paragraph_item.field_background_image) }} 
-<div style="background-image:url('{{ paragraph_item.field_background_image[0]['url'] }}')" class="background-wrapper">
+{# {{ dump(paragraph_item.field_background_image) }} #}
+<div uk-parallax="bgy: -300" style="background-image:url('{{ paragraph_item.field_background_image[0]['url'] }}')" class="background-wrapper">
 	<div class="carousel-title">{{ paragraph_item.field_title[0]['value']}}</div>
 	<div class="border"></div>
 

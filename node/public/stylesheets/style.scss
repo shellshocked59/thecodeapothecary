@@ -47,6 +47,31 @@ em{
 	color:inherit;
 }
 
+.cta{
+	display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    width: auto;
+    min-width: 200px;
+    background-color: #0096D6;
+    color: #ffffff;
+    border: 0px;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    padding: 15px 20px;
+    &:hover{
+    	text-decoration: none;
+	    filter: alpha(opacity=80);
+	    -moz-opacity: 0.8;
+	    opacity: 0.8;
+	    background-color: #117EAD;
+    	border-color: #117EAD;
+    	color:#ffffff;
+    }
+}
+
 .uk-button{
     margin-top: 10px;
     border: 0;
@@ -217,5 +242,23 @@ em{
 				}
 			}
 		}
+	}
+}
+
+
+.hero_with_buzzwords{
+	padding:0;
+	color:white;
+	text-align:center;
+
+	.background-wrapper{
+		min-height:100px;
+		padding:50px 100px;
+	}
+	.buzzwords{
+		padding-top:20px;
+		padding-bottom:20px;
+		font-size:120%;
+		font-weight:700;
 	}
 }

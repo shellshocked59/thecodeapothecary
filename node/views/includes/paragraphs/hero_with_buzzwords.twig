@@ -1,13 +1,31 @@
 {# {{ dump(paragraph_item) }}  #}
-<div class="hero-with-buzzwords">
-	<div class="buzzwords">
+<div uk-parallax="bgy: -300" style="background-image:url('{{ paragraph_item.field_background_image[0]['url'] }}')" class="hero-with-buzzwords background-wrapper">
+	<ul class="uk-switcher-{{ paragraph_item.id[0]['value'] }} buzzwords uk-switcher" uk-switcher="animation: uk-animation-fade; duration: 500;">
 		{% for buzzword in paragraph_item.field_buzzwords %}
-			<div class="buzzword">{{ buzzword.value }}</div>
+			<li class="buzzword">{{ buzzword.value }}</li>
 		{% endfor %}
-	</div>
+	</ul>
 	<div class="ctas">
 		{% for cta in paragraph_item.field_links %}
 			<a class="cta" href="{{ cta.field_link[0].uri }}">{{ cta.field_link[0].title }}</a>
 		{% endfor %}
 	</div>
 </div>
+
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", () => {
+		//cycle through uk-switcher periodically
+		var buzzwords_i_{{ paragraph_item.id[0]['value']  }} = 0;
+		function setTimer_{{ paragraph_item.id[0]['value']  }}() {
+			setTimeout(function () {
+			buzzwords_i_{{ paragraph_item.id[0]['value']  }} = buzzwords_i_{{ paragraph_item.id[0]['value']  }} + 1;
+			UIkit.switcher(document.querySelector('.uk-switcher-{{ paragraph_item.id[0]['value']  }}')).show(buzzwords_i_{{ paragraph_item.id[0]['value']  }}, {'animation': 'uk-animation-fade', 'duration': 1000});
+			setTimer_{{ paragraph_item.id[0]['value']  }}();
+		}, 3000);
+
+			
+		}
+		setTimer_{{ paragraph_item.id[0]['value']  }}();
+		
+	});
+</script>
