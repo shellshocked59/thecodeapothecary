@@ -1,0 +1,9 @@
+uuid: 60f98344-ec5a-4bd3-abe3-81a6c4e22a46
+langcode: en
+status: true
+dependencies: {  }
+id: hero_with_buzzwords
+label: 'Hero with Buzzwords'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

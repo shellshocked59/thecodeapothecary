@@ -1,0 +1,21 @@
+uuid: 5ef312a4-1e10-44f4-8803-27da8f855aae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_html_slide
+    - paragraphs.paragraphs_type.carousel_with_title
+  module:
+    - text
+id: paragraph.carousel_with_title.field_html_slide
+field_name: field_html_slide
+entity_type: paragraph
+bundle: carousel_with_title
+label: 'HTML Slide'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

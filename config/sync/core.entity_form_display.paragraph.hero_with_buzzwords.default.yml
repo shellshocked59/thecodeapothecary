@@ -1,0 +1,49 @@
+uuid: 1025fd65-6a9d-4e86-bf02-fff389890104
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_with_buzzwords.field_background_image
+    - field.field.paragraph.hero_with_buzzwords.field_buzzwords
+    - field.field.paragraph.hero_with_buzzwords.field_links
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.hero_with_buzzwords
+  module:
+    - image
+    - inline_entity_form
+id: paragraph.hero_with_buzzwords.default
+targetEntityType: paragraph
+bundle: hero_with_buzzwords
+mode: default
+content:
+  field_background_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_buzzwords:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_links:
+    weight: 2
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,28 @@
+uuid: 5237dfbe-c2ae-40fb-b8ea-d200c0207d5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_links
+    - node.type.menu_link
+    - paragraphs.paragraphs_type.hero_with_buzzwords
+id: paragraph.hero_with_buzzwords.field_links
+field_name: field_links
+entity_type: paragraph
+bundle: hero_with_buzzwords
+label: Links
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      menu_link: menu_link
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
