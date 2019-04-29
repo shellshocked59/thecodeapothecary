@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
+
 //initialize redis and get all data
 var json_data = require('./models/redis');
 json_data.initialize();

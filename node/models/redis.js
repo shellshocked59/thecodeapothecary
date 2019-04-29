@@ -13,6 +13,9 @@ bluebird.promisifyAll(redis.Multi.prototype);
 var Promise = require("bluebird");
 var request = Promise.promisify(require("request"));
 
+var config_init = require('../config/init');
+var config_settings = config_init.get_settings();
+
 
 //get json_data from redis and store as a variable
 var json_listing = {};
@@ -20,10 +23,10 @@ var json_nodes = {};
 var is_json_ready = 0;
 
 //drupal configuration
-var site_key = (process.env.SITE_KEY || 'tca');
-var drupal_base_url = 'http://www.thecodeapothecary.com:8080/';
+var site_key = config_settings.SITE_KEY;
+var drupal_base_url = config_settings.ENDPOINT;
 var drupal_options = {
-    port: '80',
+    port: config_settings.ENDPOINT_PORT,
     method: 'GET',
 }
 

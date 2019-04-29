@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+//set configuration variables
+var config_init = require('../config/init');
+var config_settings = config_init.get_settings();
+
 /**
  * Module dependencies.
  */
