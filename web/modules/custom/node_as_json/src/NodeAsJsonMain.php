@@ -61,7 +61,9 @@ class NodeAsJsonMain {
           $url = file_create_url($file_uri);
           $values[$key]['url'] = $url;
           $values[$key]['uri'] = $file_uri;
+          unset($values[$key]['target_id']);
           $reference = (object) $values;
+          $reference = $reference->{0};
           $is_drupal_object = false;
         }else{
           $reference = node_load($value['target_id'], $value['target_revision_id']);
