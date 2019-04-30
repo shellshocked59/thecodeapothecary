@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.hero_with_buzzwords.field_background_image
     - field.field.paragraph.hero_with_buzzwords.field_buzzwords
     - field.field.paragraph.hero_with_buzzwords.field_links
+    - field.field.paragraph.hero_with_buzzwords.field_title
     - image.style.thumbnail
     - paragraphs.paragraphs_type.hero_with_buzzwords
   module:
@@ -17,7 +18,7 @@ bundle: hero_with_buzzwords
 mode: default
 content:
   field_background_image:
-    weight: 1
+    weight: 2
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -25,7 +26,7 @@ content:
     type: image_image
     region: content
   field_buzzwords:
-    weight: 0
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -33,7 +34,7 @@ content:
     type: string_textfield
     region: content
   field_links:
-    weight: 2
+    weight: 3
     settings:
       form_mode: default
       label_singular: ''
@@ -43,6 +44,14 @@ content:
       override_labels: false
     third_party_settings: {  }
     type: inline_entity_form_simple
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
 hidden:
   created: true

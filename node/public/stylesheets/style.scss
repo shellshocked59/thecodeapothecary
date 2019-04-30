@@ -235,6 +235,7 @@ em{
 	.uk-slideshow{
 		position:relative;
 		.uk-slideshow-items{
+			min-height:150px!important;
 			.slide{
 				.wysiwyg{
 					max-width:$preferred_text_width;

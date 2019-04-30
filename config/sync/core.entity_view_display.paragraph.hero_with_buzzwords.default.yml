@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.hero_with_buzzwords.field_background_image
     - field.field.paragraph.hero_with_buzzwords.field_buzzwords
     - field.field.paragraph.hero_with_buzzwords.field_links
+    - field.field.paragraph.hero_with_buzzwords.field_title
     - paragraphs.paragraphs_type.hero_with_buzzwords
   module:
     - image
@@ -38,5 +39,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_title:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden: {  }

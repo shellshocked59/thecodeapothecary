@@ -1,0 +1,17 @@
+uuid: f40c2494-f9e1-478e-ab8d-c4d98911e302
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Experience Cards'
+type: experience_cards
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

@@ -1,0 +1,20 @@
+uuid: b42fee2b-ac56-4aff-891d-522072cfb2a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.experience_cards
+  module:
+    - user
+id: node.experience_cards.teaser
+targetEntityType: node
+bundle: experience_cards
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

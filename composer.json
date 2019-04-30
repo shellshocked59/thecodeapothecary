@@ -23,6 +23,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.6.15",
         "drupal/devel": "^2.0",
+        "drupal/fontawesome": "^2.12",
         "drupal/hook_post_action": "^1.0",
         "drupal/inline_entity_form": "^1.0",
         "drupal/paragraphs": "^1.8",

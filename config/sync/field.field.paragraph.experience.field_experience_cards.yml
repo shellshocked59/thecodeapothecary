@@ -1,0 +1,28 @@
+uuid: 2c05125c-3219-4de1-99e3-3abd43eeb05d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_experience_cards
+    - node.type.page
+    - paragraphs.paragraphs_type.experience
+id: paragraph.experience.field_experience_cards
+field_name: field_experience_cards
+entity_type: paragraph
+bundle: experience
+label: 'Experience Cards'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

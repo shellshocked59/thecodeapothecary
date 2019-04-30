@@ -1,0 +1,21 @@
+uuid: 4ac86160-1f0b-4acc-b91a-c65bc5708c87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fa_icon
+    - node.type.experience_cards
+  module:
+    - fontawesome
+id: node.experience_cards.field_fa_icon
+field_name: field_fa_icon
+entity_type: node
+bundle: experience_cards
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: fontawesome_icon

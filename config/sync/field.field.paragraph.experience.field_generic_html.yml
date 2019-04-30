@@ -1,0 +1,21 @@
+uuid: 3a3ecb0e-b349-466f-bcc6-deb34f23acd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_generic_html
+    - paragraphs.paragraphs_type.experience
+  module:
+    - text
+id: paragraph.experience.field_generic_html
+field_name: field_generic_html
+entity_type: paragraph
+bundle: experience
+label: 'Generic HTML'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

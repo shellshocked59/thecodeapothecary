@@ -1,0 +1,19 @@
+uuid: 4ba0c1fc-5711-4242-98a1-ae54ab0a2e1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tagline
+    - node.type.experience_cards
+id: node.experience_cards.field_tagline
+field_name: field_tagline
+entity_type: node
+bundle: experience_cards
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
