@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_url_alias
+    - node.type.page
+    - node.type.sites
   module:
     - node
     - user
@@ -469,7 +471,9 @@ display:
           group_type: group
           admin_label: ''
           operator: in
-          value: {  }
+          value:
+            page: page
+            sites: sites
           group: 1
           exposed: true
           expose:
