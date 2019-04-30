@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.experience.field_title
     - paragraphs.paragraphs_type.experience
   module:
+    - inline_entity_form
     - text
 id: paragraph.experience.default
 targetEntityType: paragraph
@@ -17,11 +18,14 @@ content:
   field_experience_cards:
     weight: 2
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      collapsed: true
+      override_labels: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: inline_entity_form_simple
     region: content
   field_generic_html:
     weight: 1

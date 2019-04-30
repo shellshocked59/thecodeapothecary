@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_experience_cards
-    - node.type.page
+    - node.type.experience_cards
     - paragraphs.paragraphs_type.experience
 id: paragraph.experience.field_experience_cards
 field_name: field_experience_cards
@@ -20,7 +20,7 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      page: page
+      experience_cards: experience_cards
     sort:
       field: _none
     auto_create: false

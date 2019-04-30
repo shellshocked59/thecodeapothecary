@@ -26,4 +26,13 @@ settings:
       generic_html:
         weight: 2
         enabled: false
+      carousel_with_title:
+        weight: 5
+        enabled: false
+      experience:
+        weight: 6
+        enabled: false
+      hero_with_buzzwords:
+        weight: 8
+        enabled: false
 field_type: entity_reference_revisions
