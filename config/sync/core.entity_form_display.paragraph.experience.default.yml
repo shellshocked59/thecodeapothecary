@@ -3,11 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.experience.field_background_image
     - field.field.paragraph.experience.field_experience_cards
     - field.field.paragraph.experience.field_generic_html
     - field.field.paragraph.experience.field_title
+    - image.style.thumbnail
     - paragraphs.paragraphs_type.experience
   module:
+    - image
     - inline_entity_form
     - text
 id: paragraph.experience.default
@@ -15,8 +18,16 @@ targetEntityType: paragraph
 bundle: experience
 mode: default
 content:
+  field_background_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
   field_experience_cards:
-    weight: 2
+    weight: 3
     settings:
       form_mode: default
       label_singular: ''
@@ -28,7 +39,7 @@ content:
     type: inline_entity_form_simple
     region: content
   field_generic_html:
-    weight: 1
+    weight: 2
     settings:
       rows: 5
       placeholder: ''

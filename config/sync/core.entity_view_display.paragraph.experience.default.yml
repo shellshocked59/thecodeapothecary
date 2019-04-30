@@ -3,17 +3,28 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.experience.field_background_image
     - field.field.paragraph.experience.field_experience_cards
     - field.field.paragraph.experience.field_generic_html
     - field.field.paragraph.experience.field_title
     - paragraphs.paragraphs_type.experience
   module:
+    - image
     - text
 id: paragraph.experience.default
 targetEntityType: paragraph
 bundle: experience
 mode: default
 content:
+  field_background_image:
+    weight: 3
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
   field_experience_cards:
     weight: 2
     label: above

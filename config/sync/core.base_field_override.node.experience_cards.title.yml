@@ -1,0 +1,18 @@
+uuid: 58b6193d-a05d-4e8d-b980-30d0641f2f7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.experience_cards
+id: node.experience_cards.title
+field_name: title
+entity_type: node
+bundle: experience_cards
+label: 'CMS Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
