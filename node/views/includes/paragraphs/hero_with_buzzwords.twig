@@ -1,5 +1,6 @@
 {# {{ dump(paragraph_item) }}  #}
 <div uk-parallax="bgy: -300" style="background-image:url('{{ paragraph_item.field_background_image[0]['url'] }}')" class="hero-with-buzzwords background-wrapper">
+	<h2 class="hero-title">{{ paragraph_item.field_title[0]['value']}}</h2>
 	<ul class="uk-switcher-{{ paragraph_item.id[0]['value'] }} buzzwords uk-switcher" uk-switcher="animation: uk-animation-fade; duration: 500;">
 		{% for buzzword in paragraph_item.field_buzzwords %}
 			<li class="buzzword">{{ buzzword.value }}</li>
@@ -7,7 +8,12 @@
 	</ul>
 	<div class="ctas">
 		{% for cta in paragraph_item.field_links %}
-			<a class="cta" href="{{ cta.field_link[0].uri }}">{{ cta.field_link[0].title }}</a>
+			{% set class = 'cta' %}
+			{% if loop.index > 1 %}
+				{% set class = 'cta cta-secondary' %}
+			{% endif %}
+			<a class="{{ class }}" href="{{ cta.field_link[0].uri }}">{{ cta.field_link[0].title }}</a>
+			
 		{% endfor %}
 	</div>
 </div>

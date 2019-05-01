@@ -82,6 +82,14 @@ em{
     	color:#ffffff;
     }
 }
+.cta-secondary{
+	background-color:#ffffff;
+	color:#0096D6;
+	&:hover{
+		background-color:#ffffff;
+		color:#0096D6;
+	}
+}
 
 .uk-button{
     margin-top: 10px;
@@ -128,6 +136,12 @@ em{
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.12);
 
 	.site-name{
+		a{
+			color:#ffffff;
+			&:hover{
+				text-decoration: none;
+			}
+		}
 		.logo{
 			font-size:40px;
 			display:inline-block;
@@ -257,6 +271,12 @@ em{
 		background-color:white;
 		margin-bottom:50px;
 	}
+	.uk-slidenav{
+		color:white;
+		@media only screen and (max-width: 600px) {
+			display:none;
+		}
+	}
 	.uk-slideshow{
 		position:relative;
 		.uk-slideshow-items{
@@ -285,10 +305,65 @@ em{
 			padding-right:10px;
 		}
 	}
+	.hero-title{
+		color:white;
+		margin-bottom:0px;
+	}
 	.buzzwords{
 		padding-top:20px;
 		padding-bottom:20px;
 		font-size:120%;
 		font-weight:700;
+	}
+}
+
+.experience{
+	padding:0;
+	.background-wrapper{
+		padding:50px 10px;
+	}
+	color:white;
+	text-align:center;
+	.carousel-title{
+		font-size:300%;
+		letter-spacing: .15em;
+		height:40px;
+		@media only screen and (max-width: 600px) {
+			font-size:200%;
+		}
+	}
+	.border{
+		background-color:white;
+		margin-bottom:50px;
+	}
+	.cards{
+		.card{
+			position:relative;
+			margin-top:20px;
+			margin-bottom:20px;
+			text-align: left;
+		}
+		.card-wrapper{
+			height:100%;
+			background-color:white;
+			color:black;
+			padding:10px;
+			opacity:0.925;
+			border-radius:5px;
+		}
+		.card-header{
+			margin-bottom:10px;
+		}
+		.title{
+			display:inline-block;
+			font-size:130%;
+		}
+		.icon{
+			display:inline-block;
+			font-size:30px;
+		}
+		.bullets{
+			margin-left:2px;
+		}
 	}
 }
