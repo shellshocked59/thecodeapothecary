@@ -1,0 +1,11 @@
+uuid: f48008b4-ba00-4c78-86a8-329982b436e9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: riM1D8EYT8Lp7gt59Eq6yOX3xwr-I6V2oFKzCJRU1-s
+name: Sections
+vid: sections
+description: ''
+hierarchy: 0
+weight: 0

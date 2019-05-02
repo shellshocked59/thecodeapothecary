@@ -1,0 +1,7 @@
+name: hello world
+type: module
+description: 'Used for Mediacurrent Drupal test'
+version: 1.0
+core: 8.x
+dependencies:
+  - content_type_vocab_hello_world
