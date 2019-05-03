@@ -25,6 +25,7 @@ module:
   hook_post_action: 0
   image: 0
   inline_entity_form: 0
+  kint: 0
   link: 0
   menu_ui: 0
   node: 0

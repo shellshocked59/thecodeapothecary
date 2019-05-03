@@ -1,0 +1,20 @@
+uuid: 24dddc50-d404-4c34-ad42-d91e778be212
+langcode: en
+status: true
+dependencies:
+  module:
+    - hello_world
+  theme:
+    - bartik
+id: helloworldblock
+theme: bartik
+region: sidebar_second
+weight: -6
+provider: null
+plugin: hello_world_block
+settings:
+  id: hello_world_block
+  label: 'Hello World!'
+  provider: hello_world
+  label_display: visible
+visibility: {  }

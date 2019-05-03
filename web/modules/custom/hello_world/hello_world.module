@@ -1,2 +1,41 @@
 <?php
+/*
+1) The text "Hello World!" should appear in bold typeface within a block on the right side of all Hello World Article pages only.
+	create a custom block
+	define its default location on install to sidebar
+	output of block is just "Hello World!"
+	article pages only
+2) A list of hyperlinked titles to all nodes that are of Hello World Article type, and are tagged with "Enabled" terms from the Sections vocabulary, should appear below the "Hello World!" text on Hello World Article pages.
+	using #1, if tagged with sections
+	run an entity query to get nodes
+	render them out in existing block
+3) When viewing a Hello World Article on the Drupal site, the phrase "Content starts here!" should appear in an italic typeface as the first line of content on the page.
+	inject "Content starts here!" into proper location
+	below submitted
+	above description field
+	inbetween <header> and node__content inside <article>
+	ITALICS
+	possibly custom field to be displayed??
+
+*/
+
+function hello_world_preprocess_node(&$variables) {
+	if($variables['node']->getType() == 'hello_world_article'){
+		$variables['content']['hello_world'] = [
+			'#theme' => 'markup',
+			'#title' => '',
+			'#label_display' => 'hidden',
+			'#weight' => -101,
+			'#formatter' => 'text_default',
+			'#is_multiple' => false,
+			0 => [
+				'#type' => 'processed_text',
+				'#text' => '<span style="italic">Content starts here!</em>',
+				'#text' => '<span style="font-style:italic;">Content starts here!</span>',
+				'#format' => 'full_html',
+				'#langcode' => 'en',
+			]
+		];
+	}
+}
 
