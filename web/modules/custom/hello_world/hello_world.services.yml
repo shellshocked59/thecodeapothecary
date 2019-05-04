@@ -1,0 +1,5 @@
+services:
+  hello_world.block:
+    class: Drupal\hello_world\Plugin\Block\HelloWorldBlock
+  hello_world.block_handler:
+    class: Drupal\hello_world\HelloWorldBlockHandler
