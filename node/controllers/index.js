@@ -107,7 +107,7 @@ exports.get_header_footer_data = function(req, res) {
 exports.getMetadata = function(json_data, header_footer_data) {
 	let site_domain = 'http://' + header_footer_data.site_domain;
 	let path = json_data.path[0]['alias'];
-	if(path == 'home'){
+	if(path == '/home'){
 		path = '';
 	}
 	return {
