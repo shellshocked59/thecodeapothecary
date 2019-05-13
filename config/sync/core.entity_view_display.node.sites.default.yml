@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.sites.field_copyright
     - field.field.node.sites.field_footer_links
     - field.field.node.sites.field_header_links
+    - field.field.node.sites.field_primary_domain
     - field.field.node.sites.field_site_key
     - field.field.node.sites.field_tagline
     - node.type.sites
@@ -39,6 +40,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_primary_domain:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_site_key:
     weight: 101

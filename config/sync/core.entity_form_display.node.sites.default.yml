@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.sites.field_copyright
     - field.field.node.sites.field_footer_links
     - field.field.node.sites.field_header_links
+    - field.field.node.sites.field_primary_domain
     - field.field.node.sites.field_site_key
     - field.field.node.sites.field_tagline
     - node.type.sites
@@ -62,6 +63,14 @@ content:
       allow_duplicate: false
     third_party_settings: {  }
     type: inline_entity_form_complex
+    region: content
+  field_primary_domain:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_site_key:
     weight: 7

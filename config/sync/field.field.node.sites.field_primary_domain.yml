@@ -1,0 +1,19 @@
+uuid: 711b710b-2180-413a-9bf0-8cedb70ecc76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_domain
+    - node.type.sites
+id: node.sites.field_primary_domain
+field_name: field_primary_domain
+entity_type: node
+bundle: sites
+label: 'Primary Domain'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

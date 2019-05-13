@@ -21,6 +21,7 @@ module:
   filter: 0
   fontawesome: 0
   hello_world: 0
+  help: 0
   history: 0
   hook_post_action: 0
   image: 0

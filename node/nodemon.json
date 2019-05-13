@@ -5,6 +5,7 @@
     "node_modules/**/node_modules"
   ],
   "verbose": true,
+  "ext": "js,json,twig",
   "execMap": {
     "js": "node --harmony"
   },
@@ -14,5 +15,5 @@
   "env": {
     "NODE_ENV": "development"
   },
-  "ext": "js,json,twig"
+  "verbose": true
 }

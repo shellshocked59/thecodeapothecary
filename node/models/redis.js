@@ -30,7 +30,7 @@ var drupal_options = {
     method: 'GET',
 }
 
-exports.get_json_listing = function(){
+exports.get_json_listing_var = function(){
 	return json_listing;
 }
 exports.get_json_key = function(key){

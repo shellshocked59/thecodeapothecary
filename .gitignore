@@ -23,6 +23,10 @@
 # Ignore .env files as they are personal
 /.env
 
-
+#generated CSS
 /node/public/stylesheets/style.css
 /node/public/stylesheets/style.css.map
+
+# react files
+/node/public/javascripts/react/*hot-update.json
+/node/public/javascripts/react/*hot-update.js

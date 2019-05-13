@@ -1,0 +1,6 @@
+{% if prod %}
+Sitemap: {{ site_data.base_url }}/sitemap.xml
+{% else %}
+User-agent: *
+Disallow: /
+{% endif %}
