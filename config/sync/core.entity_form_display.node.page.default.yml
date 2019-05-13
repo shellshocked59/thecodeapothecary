@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.page.field_meta_description
     - field.field.node.page.field_page_type
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_site
@@ -24,6 +25,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_meta_description:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_page_type:
     weight: 8
     settings: {  }
