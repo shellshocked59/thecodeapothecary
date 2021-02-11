@@ -1,0 +1,296 @@
+
+<html lang="en"><head><meta charset="utf-8"><title>sleepyti.me bedtime calculator</title><meta name="description" content="Sleepyti.me bedtime calculator helps you wake up refreshed by finding the best time to go to sleep."><meta name="author" content="David Shaw"><meta property="og:image" content="https://sleepyti.me/wp-content/uploads/2020/03/bedtime-calculator-social-media-image.jpg"/><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"><link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300,600' rel='stylesheet' type='text/css'><link rel="stylesheet" href="http://sleepyti.me/app/css/normalize.css"><link rel="stylesheet" href="http://sleepyti.me/app/css/skeleton.css"> <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <!-- Hotjar Tracking Code for sleepyti.me -->  <!-- End Google Tag Manager --> <!-- Global site tag (gtag.js) - Google Analytics --> <meta name="theme-color" content="#ffffff"> <script>
+
+$(document).ready(function() {
+	$('#ad').fadeOut(1);
+	$('.back').click(function() {
+		window.location = "/";
+	});
+	$('#calculate').click(function() {
+		if ($('#hour').val() != '(hour)' && $('#minute').val() != '(minute)') {
+			$('#start').hide();
+			var setTime = new Date();
+			if ($('#hour').val() == 12) {
+				$('#hour').val(0);
+			}
+			if ($('#ampm').val() == "AM") {
+				setTime.setHours($('#hour').val());
+			} else if ($('#ampm').val() == "PM") {
+				setTime.setHours(+$('#hour').val() + 12);
+			}
+			setTime.setMinutes($('#minute').val());
+			var res1 = new Date(setTime.getTime() - 270 * 60000);
+			var res2 = new Date(res1.getTime() - 90 * 60000);
+			var res3 = new Date(res2.getTime() - 90 * 60000);
+			var res4 = new Date(res3.getTime() - 90 * 60000);
+
+			function retDate(dateObj) {
+				var formatted = '';
+				var pm = false;
+				if (dateObj.getHours() > 12) {
+					formatted = dateObj.getHours() - 12;
+					pm = true;
+				} else if (dateObj.getHours() < 12 && dateObj.getHours() != 0) {
+					formatted = dateObj.getHours();
+				} else if (dateObj.getHours() == 0) {
+					formatted = "12";
+				} else if (dateObj.getHours() == 12) {
+					formatted = "12";
+					pm = true;
+				}
+				if (dateObj.getMinutes() < 10) {
+					formatted = formatted + ":0" + dateObj.getMinutes();
+				} else {
+					formatted = formatted + ":" + dateObj.getMinutes();
+				}
+				if (pm == true) {
+					formatted = formatted + " PM";
+				} else {
+					formatted = formatted + " AM";
+				}
+				return formatted;
+			}
+			$('#result4').html(String(retDate(res1)));
+			$('#result3').html(String(retDate(res2)));
+			$('#result2').html(String(retDate(res3)));
+			$('#result1').html(String(retDate(res4)));
+			$('#results').fadeIn();
+			$('#feedback').fadeIn();
+			$('#ad').fadeIn();
+		} // end hour/minute check if
+		else {
+			alert("Please select an hour and a minute before trying to calculate!");
+		} // end not-filled check
+	}); // end calculate  $('#zzz').click(function() {
+	
+	var zDate = new Date();
+	var res1 = new Date(zDate.getTime() + 104 * 60000);
+	var res2 = new Date(res1.getTime() + 90 * 60000);
+	var res3 = new Date(res2.getTime() + 90 * 60000);
+	var res4 = new Date(res3.getTime() + 90 * 60000);
+	var res5 = new Date(res4.getTime() + 90 * 60000);
+	var res6 = new Date(res5.getTime() + 90 * 60000);
+
+	function retDate(dateObj) {
+		var formatted = '';
+		var pm = false;
+		if (dateObj.getHours() > 12) {
+			formatted = dateObj.getHours() - 12;
+			pm = true;
+		} else if (dateObj.getHours() < 12 && dateObj.getHours() != 0) {
+			formatted = dateObj.getHours();
+		} else if (dateObj.getHours() == 0) {
+			formatted = "12";
+		} else if (dateObj.getHours() == 12) {
+			formatted = "12";
+			pm = true;
+		}
+		if (dateObj.getMinutes() < 10) {
+			formatted = formatted + ":0" + dateObj.getMinutes();
+		} else {
+			formatted = formatted + ":" + dateObj.getMinutes();
+		}
+		if (pm == true) {
+			formatted = formatted + " PM";
+		} else {
+			formatted = formatted + " AM";
+		}
+		return formatted;
+	}
+
+	/*$('#start').hide();
+	$('#resultNow1').html(String(retDate(res1)));
+	$('#resultNow2').html(String(retDate(res2)));
+	$('#resultNow3').html(String(retDate(res3)));
+	$('#resultNow4').html(String(retDate(res4)));
+	$('#resultNow5').html(String(retDate(res5)));
+	$('#resultNow6').html(String(retDate(res6)));
+	$('#resultsNow').fadeIn();
+	$('#feedback').fadeIn();
+	$('#ad').fadeIn();*/
+});
+
+ </script></head><body>  <!-- Begin Sleep Quiz --><div id="quizstrip"> <a href="https://sleepyti.me/sleepquiz" target="_blank"><div class="inner-link">How Well Are You Sleeping? >> <span class="yellow">[ Find Out Now ]</span></div></a></div> <!-- End Sleep Quiz --><nav><div id="logo"><img class="icon" src="https://sleepyti.me/wp-content/uploads/2019/09/home-logo-sleepy-time.png"></div> <label for="drop" class="toggle">MENU ▼</label> <input type="checkbox" id="drop" /><ul class="menu"><li> <!-- First Tier Drop Down --> <label for="drop-2" class="toggle">Guides +</label> <a>Guides +</a> <input type="checkbox" id="drop-2" /><ul><li><a href="https://sleepyti.me/best-mattress/">Best Mattresses</a></li></ul></li></ul></nav><div class="row"><div align="center" class="twelve columns"><h2 style="text-align: center; font-size:150%;">sleepyti.me</h2><div id="start"><p><span style="font-size: 150%;">I have to wake up at...</span><br/><div style="text-align: center; margin-top: -20px;"> <select id="hour" style="background-color: #001f3f;"><option>(hour)</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option> </select> <select id="minute" style="background-color: #001f3f;"><option>(minute)</option><option>00</option><option>05</option><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option><option>35</option><option>40</option><option>45</option><option>50</option><option>55</option> </select> <select id="ampm" style="background-color: #001f3f;"><option>AM</option><option>PM</option> </select> <br/> <button id="calculate"style="margin-top:20px;">calculate</button> <br/><br/></p></div><p><span style="font-size: 150%;padding: 0px 10px;">If you go to bed NOW, you should wake up at...</span></p><center> <button id="zzz" style="margin-top:0px;">ZZZ</button> <br/><br/><p><span style="font-size: 150%;">I plan to FALL ASLEEP at...</span></p> <button><a href="https://sleepyti.me/wake" style="text-decoration: none">Calculate</a></button> <br/><br/><br/><br/><br/><br/><p><span style="font-size: 150%;">Featured On:</span></p> <img class="featur" src="https://sleepyti.me/wp-content/uploads/2020/01/featured-on-images.png"></center></div> <!-- end #start --><div id="results" style="display:none;"><p style="font-size: 130%">You should try to <b>fall asleep</b> at one of the following times:</p> <span id="result1" style="font-size: 300%; color: rgb(1, 223, 116);" title="Six Cycles: Nine Hours of Sleep"></span> <i style="font-size: 200%;">or </i> <span id="result2" style="font-size: 300%; color: rgb(1, 223, 116);" title="Five Cycles: Seven and a half Hours of Sleep"></span> <i style="font-size: 200%;">or </i> <span id="result3" style="font-size: 300%; color: rgb(1, 223, 116);" title="Four Cycles: Six Hours of Sleep"></span> <i style="font-size: 200%;">or </i> <span id="result4" style="font-size: 300%; color: rgb(1, 223, 116);" title="Three Cycles: Four and a half Hours of Sleep"></span> <br><p style="margin-top: 1em; font-size: 120%; color: rgb(0, 128, 255);">We'd love for you to join our Facebook Community!</p><div class="fb-page" data-href="https://www.facebook.com/sleepytime.official/" data-tabs="" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/sleepytime.official/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/sleepytime.official/">Sleepyti.me</a></blockquote></div><p style="margin-top: 1em; font-size: 140%; color: rgb(0, 128, 255);">Please keep in mind that you should be <b>falling asleep</b> at these times.</p><p style="font-size: 140%; color: rgb(0, 128, 255);">The average human takes <b>fourteen minutes</b> to fall asleep, so plan accordingly!</p><p style="font-size: 130%; color: rgb(153, 102, 204);">sleepyti.me works by counting backwards in <b>sleep cycles</b>. Waking up in the middle of a sleep cycle leaves you feeling tired and groggy, but waking up <i>in between</i> cycles wakes you up feeling refreshed and alert!</p><center><a class="back" href="#" style="font-size: 200%;color: #cdbc67;">Calculate Again</a><br/></center> <a href="https://sleepyti.me/sleep-quiz" target="_blank"><div style="font-size:x-large; color:white; margin:20px;">How Well Are You Sleeping? >> <span class="yellow">[ Find Out Now ]</span></div> </a>a> <br><br></div><!-- end results --><div id="resultsNow" style="display:none;"><p style="font-size: 140%">It takes the average human <b>fourteen minutes</b> to fall asleep.</p><p style="font-size: 140%">If you head to bed right now, you should try to wake up at one of the following times:</p> <span id="resultNow1" style="font-size: 300%; color: rgb(168, 39, 254);" title="One Cycle: One and a half Hours of Sleep"></span> <i style="font-size: 150%;">&nbsp;or </i> <span id="resultNow2" style="font-size: 300%; color: rgb(154, 3, 254);" title="Two Cycles: Three Hours of Sleep"></span> <i style="font-size: 150%;">&nbsp;or </i> <span id="resultNow3" style="font-size: 300%; color: rgb(150, 105, 254);" title="Three Cycles: Four and a half Hours of Sleep"></span> <i style="font-size: 150%;">&nbsp;or </i> <span id="resultNow4" style="font-size: 300%; color: rgb(140, 140, 255);" title="Four Cycles: Six Hours of Sleep"></span> <i style="font-size: 150%;">&nbsp;or </i> <span id="resultNow5" style="font-size: 300%; color: rgb(187, 187, 255);" title="Five Cycles: Seven and a half Hours of Sleep"></span> <i style="font-size: 150%;">&nbsp;or </i> <span id="resultNow6" style="font-size: 300%; color: rgb(143, 254, 221);" title="Six Cycles: Nine Hours of Sleep"></span><p style="margin-top: 1em; font-size: 150%; color: rgb(0, 128, 255);">A good night's sleep consists of 5-6 complete sleep cycles.</p><center><a class="back" href="#" style="font-size: 200%; color:#CDBC67;">Calculate Again</a><br/></center></div> <!-- end resultsNow --></div></div> <!-- end row --><div class="row"></div><div class="row"><div class="twelve columns"><p style="text-align: center; display: none;padding: 0 10px 0 10px;" id="feedback">For feedback, questions, or concerns, please feel free to <a href="mailto:contact@sleepyti.me" style= "color: #cdbc67;">e-mail</a> us. <br/><br/> If you know when you'll fall asleep, but not when you'll wake up, try <a href="/wake/" style= "color: #cdbc67;">this</a>.</p></div></div></div></body> <style type="text/css"> @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);  #quizstrip {background-color:#fd7a23; text-align:center; position:sticky; top:0;}
+.inner-link {width:100%;  padding-top:10px; padding-bottom:10px; }
+#quizstrip a {color: #ffffff; width:100%; text-decoration:none;}
+#quizstrip a:hover {color:#faedce; cursor:pointer;}
+span.yellow {color:#fff000; font-weight:bold;} 
+#container {
+ margin: 0 auto;
+ max-width: 890px;
+}  p {
+ text-align: center;
+}  .toggle,
+[id^=drop] {
+ display: none;
+}  /* Giving a background-color to the nav container. */
+nav { 
+ margin:0;
+ padding: 20px;
+ background-color: #001F3F;
+}  #logo {
+ display: block;
+ padding: 0 30px;
+ float: left;
+ font-size:20px;
+ line-height: 60px;
+}  /* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */  nav:after {
+ content:"";
+ display:table;
+ clear:both;
+}  /* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+ float: left;
+ padding:0;
+ margin:0;
+ list-style: none;
+ position: relative;
+ } 
+/* Positioning the navigation items inline */
+nav ul li {
+ margin: 0px;
+ display:inline-block;
+ float: left;
+ background-color: #001f3f;
+ }  /* Styling the links */
+nav a {
+ display:block;
+ padding:20px 20px; 
+ color:#FFF;
+ font-size:18px;
+ text-decoration:none;
+ font-family: "Josefin Sans", sans-serif;
+}  nav ul li ul li:hover { background: #fff;}  /* Background color change on Hover */
+nav a:hover { 
+ background-color: #fff; 
+}  /* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+ display: none;
+ position: absolute; 
+ /* has to be the same number as the "line-height" of "nav a" */
+ top: 60px; 
+} 
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+ display:inherit;
+} 
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+ width:220px;
+ float:none;
+ display:list-item;
+ position: relative;
+ padding-left: 0px;
+ padding-right: 0px;
+}  /* Second, Third and more Tiers 
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+ position: relative;
+ top:-60px;
+ /* has to be the same number as the "width" of "nav ul ul li" */ 
+ left:190px; 
+}
+ nav ul ul ul ul li {
+ position: relative;
+ top:-60px;
+ /* has to be the same number as the "width" of "nav ul ul li" */ 
+ left:190px; 
+} 
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ''; }
+li > a:only-child:after { content: ''; }  input[type="checkbox"], input[type="radio"] {
+ display: none;
+}  /* Media Queries
+--------------------------------------------- */  @media all and (max-width : 768px) {  #logo {
+ display: inline;
+ padding: 1px;
+ width: 70%;
+ text-align: left;
+ float: left;
+ }
+ .icon {
+ max-width: 40%;
+ max-height: 40%;
+ }
+ .featur {
+ max-width: 90%;
+ max-height: 90%;
+ }  nav {
+ margin: 0;
+ margin-bottom: 30px;
+ } 
+ nav ul {
+ float: right;
+ }  /* Hide the navigation menu by default */
+ /* Also hide the  */
+ .toggle + a,
+ .menu {
+ display: none;
+ }  /* Stylinf the toggle lable */
+ .toggle {
+ display: block;
+ background-color: #001F3F;
+ padding: 14px 20px;
+ color: #ffffff;
+ font-size: 17px;
+ text-decoration: none;
+ border: none;
+ padding: 0;
+ margin: 10px;
+ text-align: end;
+ }  .toggle:hover {
+ background-color: #2880a0;
+ }  /* Display Dropdown when clicked on Parent Lable */
+ [id^=drop]:checked + ul {
+ display: block;
+ }  /* Change menu item's width to 100% */
+ nav ul li {
+ display: block;
+ width: 100%;
+ }  nav ul ul .toggle,
+ nav ul ul a {
+ padding: 0 40px;
+ }  nav ul ul ul a {
+ padding: 0 80px;
+ }  nav a:hover,
+ nav ul ul ul a {
+ background-color: #fff;
+ } 
+ nav ul li ul li .toggle,
+ nav ul ul a,
+ nav ul ul ul a{
+ padding:14px 20px; 
+ color:#FFF;
+ font-size:17px; 
+ } 
+ nav ul li ul li .toggle,
+ nav ul ul a {
+ background-color: #2880A0; 
+ }  /* Hide Dropdowns by Default */
+ nav ul ul {
+ float: none;
+ position:static;
+ color: #ffffff;
+ /* has to be the same number as the "line-height" of "nav a" */
+ } 
+ /* Hide menus on hover */
+ nav ul ul li:hover > ul,
+ nav ul li:hover > ul {
+ display: none;
+ } 
+ /* Fisrt Tier Dropdown */
+ nav ul ul li {
+ display: block;
+ width: 100%;
+ }	nav ul ul ul li {
+ position: static;
+ /* has to be the same number as the "width" of "nav ul ul li" */  }  }  @media all and (max-width : 330px) {  nav ul li {
+ display:block;
+ width: 94%;
+ }  } </style>
