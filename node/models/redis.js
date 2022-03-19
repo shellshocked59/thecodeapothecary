@@ -1,4 +1,4 @@
-//initialize redis
+/*//initialize redis
 var redis = require("redis");
 var client = redis.createClient();
 client.on("error", function (err) {
@@ -9,6 +9,8 @@ client.on("error", function (err) {
 var bluebird = require("bluebird");
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
+*/
+
 //also make promise and request use bluebird
 var Promise = require("bluebird");
 var request = Promise.promisify(require("request"));
